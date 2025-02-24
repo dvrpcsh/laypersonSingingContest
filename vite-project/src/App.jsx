@@ -7,7 +7,7 @@ function App() {
   const [random, setRandom] = useState(0);
 
   const buttonAction = async () => {
-      const response = await axios.get("/api/");
+      const response = await axios.get("/api");
       setRandom(response.data);
   }
 
