@@ -11,3 +11,6 @@ spring:
 server:
   servlet:
     context-path: /api
+
+token:
+  secret-key:Sec3retK3y
