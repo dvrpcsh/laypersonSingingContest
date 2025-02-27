@@ -12,18 +12,16 @@ services:
     build: .
     ports:
       - 8080:8080
-    env_file:
-      - .env
-    #      MYSQL_ROOT_PASSWORD: star15321! #의미없는 구문입니다
-    #      MYSQL_DATABASE: mydb #의미 없는 구문입니다, 얘가 아까 application.yml의 환경변수인데 환경변수를 주입받지 못하고 있어요
     depends_on:
       my-db:
         condition: service_healthy
     networks:
     - nat
+    env_file:
+      - .env
+    #얘가 아까 application.yml의 환경변수인데 환경변수를 주입받지 못하고 있어요
   my-db:
     image: mysql
-
     volumes:
       - ./mysql_data:/var/lib/mysql
     ports:
