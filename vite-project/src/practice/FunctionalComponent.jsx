@@ -1,3 +1,5 @@
+import {useEffect,useState} from 'react';
+
 function FunctionalComponent() {
     console.log('Function Beginning');
     const [value, setValue] = useState(0);
@@ -11,10 +13,10 @@ function FunctionalComponent() {
     },[]);
 
     useEffect(() => {
-        console.log('Function useEffect[]');
+        console.log('Function useEffect[value]');
 
         return () => {
-            console.log('Function useEffect return[]');
+            console.log('Function useEffect return[value]');
         }
     },[value]);
 
@@ -22,7 +24,7 @@ function FunctionalComponent() {
 
     return (
         <div>
-            <h1>FunctionalComponent</h1>
+            <h1>!FunctionalComponent</h1>
             <h1>value: {value}</h1>
             <button onClick={() => {
                 setValue((state) => state + 1)
@@ -33,3 +35,5 @@ function FunctionalComponent() {
         </div>
     );
 }
+
+export default FunctionalComponent
