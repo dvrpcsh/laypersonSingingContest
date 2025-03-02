@@ -1,0 +1,17 @@
+.div {
+    float: left;
+    width: 33%;
+}
+
+.price {
+    float: left;
+    width: 33%;
+    color: red;
+    align: left;
+}
+
+.tage {
+    float: left;
+    width: 33%;
+    color: green;
+}

@@ -1,6 +1,6 @@
 package common;
 
-public class ResponseMessage {
+public interface ResponseMessage {
 
     // HTTP Status 200
     String SUCCESS = "Success";
@@ -14,7 +14,7 @@ public class ResponseMessage {
     String NOT_EXISTED_BOARD = "This board does not exist";
 
     // HTTP Status 401
-    String SIGN_IN_FAIL = "Login information missmatch";
+    String SIGN_IN_FAIL = "Login information mismatch";
     String AUTHORIZATION_FAIL = "Authorization failed";
 
     // HTTP Status 403
