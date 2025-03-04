@@ -6,24 +6,45 @@
 .SideBar {
     background-color: aqua;
     width: 200px;
+}
 
+.SideBarFooter {
+    text-align: center;
+    padding: 10px 0;
+}
+
+.SideBarFooter_addBtn {
+    background: none;
+    border-radius: 100px;
+    border: 2px solid #555;
+    width: 40px;
+    height: 40px;
+    font-size: 1.3rem;
+    padding: 10px;
+    display: flex;
+    margin: auto;
+    justify-content: center;
+    align-item: center;
+    color: #555;
+    opacity: 0.6;
+    cursor: pointer;
 }
 
 .MemoContainer {
-    background-color: bagie;
+    background-color: beige;
     flex: 1;
 }
 
 .MemoContainer_title {
     width: 100%;
-    box-sizing: bolder-box;
+    box-sizing: border-box;
     font-size: 2rem;
 }
 
 .MemoContainer_content {
     width: 100%;
     min-height: 600px;
-    box-sizing: bolder-box;
+    box-sizing: border-box;
     font-size: 1.1rem;
 }
 
@@ -33,9 +54,21 @@
     text-overflow: ellipsis;
     overflow: hidden;
     padding: 5px 8px;
+    box-sizing: border-box;
+    position: relative;
 }
 
 .MemoItem.selected {
-    background-color: rgba(100, 100, 100, 0.5);
+    background-color: rgba(100, 100, 100, 0.3);
     font-weight: 500;
+}
+
+.MemoItem_delBtn {
+    background: none;
+    color: red;
+    border: none;
+    position: absolute;
+    right: 0;
+    top: 5px;
+    cursor: pointer;
 }
