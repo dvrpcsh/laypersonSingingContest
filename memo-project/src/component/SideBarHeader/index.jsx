@@ -1,7 +1,9 @@
+import './index.css';
+
 function SideBarHeader({memos}) {
     return (
     <div className="SideBarHeader">
-        SideBarHeader
+        메모장
     </div>
     )
 }

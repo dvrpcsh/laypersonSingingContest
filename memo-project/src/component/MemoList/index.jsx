@@ -1,4 +1,5 @@
-import MemoItem from "./MemoItem";
+import MemoItem from "../MemoItem";
+import './index.css';
 
 function MemoList({ memos, setSelectedMemoIndex, selectedMemoIndex, deleteMemo}) {
     return (
