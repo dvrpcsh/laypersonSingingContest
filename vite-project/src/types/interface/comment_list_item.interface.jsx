@@ -1,5 +1,7 @@
-export default interface CommentListItem {
-    nickname: string;
-    profileImage: string || null;
-    content: string;
-}
+const CommentListItem {
+          nickname: string;
+          profileImage: string || null;
+          content: string;
+      }
+
+export default CommentListItem;
