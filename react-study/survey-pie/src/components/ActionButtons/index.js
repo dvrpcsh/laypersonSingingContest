@@ -1,4 +1,5 @@
 import { useNavigate } from 'react-router-dom';
+import Button from '../Button';
 
 function ProgressIndicator( {questionsLength, step} ) {
     const isLast= questionsLength-1 === step;
@@ -6,9 +7,9 @@ function ProgressIndicator( {questionsLength, step} ) {
 
     return (
     <div>
-        {step === 0 || <button onClick={() => {navigate(`${step-1}`)}}>이전</button>}
-        {isLast ? <button onClick={() => {navigate('/done')}}>제출</button> :
-                  <button onClick={() => {navigate(`${step+1}`)}}>다음</button>}
+        {step === 0 || <Button type="TERTIARY" onClick={() => {navigate(`${step-1}`)}}>이전</Button>}
+        {isLast ? <Button type="PRIMARY" onClick={() => {navigate('/done')}}>제출</Button> :
+                  <Button type="PRIMARY" onClick={() => {navigate(`${step+1}`)}}>다음</Button>}
 
     </div>
     )
