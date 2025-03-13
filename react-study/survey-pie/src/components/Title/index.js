@@ -1,5 +1,19 @@
+import styled from 'styled-components';
+
 function Title({children}) {
-    return <h1>{children}</h1>
+    return <TitleWrapper><span>Q.</span>{children}</TitleWrapper>
 }
+
+const TitleWrapper = styled.h1`
+    font-weight: bold;
+    font-size: 24px;
+    line-weight: 28px;
+    color: #121111;
+    margin: 0;
+
+    span {
+        margin-right: 12px;
+    }
+`;
 
 export default Title;
