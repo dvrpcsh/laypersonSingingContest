@@ -1,10 +1,16 @@
 import { useNavigate } from 'react-router-dom';
 import Button from '../Button';
 import styled from 'styled-components';
+import questionsState from '../../globalVariable/questions/atom';
+import { useRecoilValue } from 'recoil';
+import { useParams } from 'react-router-dom';
 
-function ProgressIndicator( {questionsLength, step} ) {
+function ActtionButtons () {
     const isLast= questionsLength-1 === step;
     const navigate = useNavigate();
+    const questionsLength = questions.length;
+    const questions = useRecoilValue(questionState);
+    const step = parseInt(params.step);
 
     return (
     <ActionButtonsWrapper>
@@ -23,4 +29,4 @@ const ActionButtonsWrapper = styled.div`
     gap: 16px;
 `
 
-export default ProgressIndicator;
+export default ActtionButtons;

@@ -1,5 +1,6 @@
 {
   "dependencies": {
-    "lodash.debounce": "^4.0.8"
+    "lodash.debounce": "^4.0.8",
+    "recoil": "^0.7.7"
   }
 }
