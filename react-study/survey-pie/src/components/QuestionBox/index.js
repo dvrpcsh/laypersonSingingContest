@@ -1,36 +1,22 @@
+import styled from 'styled-components';
+
 import Title from '../Title';
 import Description from '../Description';
 import Body from '../Body';
 import ActionButtons from '../ActionButtons';
-import styled from 'styled-components';
-import answersState from '../../globalVariable/answers/atom';
-import questionsState from '../../globalVariable/questions/atom';
-import { useParams } from 'react-router-dom';
-import { useRecoilState, useRecoilValue } from 'recoil';
+import useCurrentQuestion from '../../hooks/useCurrentQuestion';
+import useCurrentAnswer from '../../hooks/useCurrentAnswer';
 
 
-function QuestionBox( {} ) {
-
-    const params = useParams();
-    const step = parseInt(params.step);
-    const questions = useRecoilValue(questionsState);
-    const question = questions[step];
-    const answer = answers[step];
-    const [answers, setAnswers] = useRecoilState(answersState);
-    const setAnswer = (newAnswer) => {
-        setAnswers((answers) => {
-            const newAnswers = [...answers];
-            newAnswers[step] = newAnswer;
-
-            return newAnswers;
-        });
-    };
+function QuestionBox() {
+    const [answer,setAnswer] = useCurrentAnswer();
+    const question = useCurrentQuestion();
 
     return (
         <QuestionBoxWrapper>
-            <Title>{questions.title}</Title>
-            <Description>{questions.description}</Description>
-            <Body type={questions.type} answer={answer} setAnswer={setAnswer} options={questions.options}></Body>
+            <Title>{question.title}</Title>
+            <Description>{question.description}</Description>
+            <Body type={question.type} answer={answer} setAnswer={setAnswer} options={question.options}></Body>
             <ActionButtons />
         </QuestionBoxWrapper>
     )
