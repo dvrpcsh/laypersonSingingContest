@@ -1,11 +1,13 @@
 import { useRecoilValue } from 'recoil';
-import questionsState from '../globalVariable/questions/atom';
+
+import surveyState from '../globalVariable/survey/surveyState';
 import useStep from './useStep';
 
-function useCurrentQuestion() {
 
+function useCurrentQuestion() {
     const step = useStep();
-    const questions = useRecoilValue(questionsState);
+    const surveyData = useRecoilValue(surveyState);
+    const questions = surveyData?.questions || [];
 
     return questions[step];
 }

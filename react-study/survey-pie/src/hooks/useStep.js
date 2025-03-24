@@ -3,9 +3,8 @@ import { useParams } from 'react-router-dom';
 function useStep() {
 
     const params = useParams();
-    const step = parseInt(params.step);
 
-    return step;
+    return parseInt(params.step);
 }
 
 export default useStep;
