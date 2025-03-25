@@ -9,8 +9,9 @@ function TextAreaInput({answer = '', setAnswer, options}) {
                 setAnswer(e.target.value);
             }}
             placeholder = {options.placeholder}
+            {...(options?.max && { maxLength: options?.max})}
         />
-    )
+    );
 }
 
 const TextArea = styled.textarea `

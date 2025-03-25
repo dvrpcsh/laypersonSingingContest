@@ -32,7 +32,7 @@ function ActionButtons () {
     <ActionButtonsWrapper>
         {step === 0 || (
             <Button
-              type="TERTIARY"
+              type="SECONDARY"
               onClick={() => {
                 navigate(`${step-1}`);
                 }}>이전</Button>

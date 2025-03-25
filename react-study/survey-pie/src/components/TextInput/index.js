@@ -9,8 +9,9 @@ function TextInput({answer = '', setAnswer, options}) {
                 setAnswer(e.target.value);
             }}
             placeholder = {options.placeholder}
+            {...(options?.max && { maxLength: options?.max })}
         />
-    )
+    );
 }
 
 const Input = styled.input `
